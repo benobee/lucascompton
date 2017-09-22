@@ -1,0 +1,83 @@
+/***** CLASSES *****/
+
+
+/*Grid*/
+
+.collection-list {
+    display: flex;
+    &.column {
+        flex-direction: row;
+    }
+    &.relaxed {
+        justify-content: space-between;
+    }
+    &.tight {
+        justify-content: flex-start;
+    }
+    &.grid {
+        flex-wrap: wrap;
+    }
+    &.five {
+        .collection-item {
+            width: 20%;
+            @media screen and (max-width: 768px) {
+                width:100%;
+            }
+        }
+    }
+    &.three {
+        .collection-item {
+            width: 32.5%;
+            @media screen and (max-width: 768px) {
+                width:100%;
+            }
+        }
+    }
+}
+
+
+/* professionals grid */
+
+.professionals-list {
+    .summary-item {
+        .summary-thumbnail-container {
+            margin-bottom: 0;
+            img {
+                transition: filter 0.4s;
+                filter: grayscale(1);
+            }
+        }
+        .summary-content {
+            height: 60px;
+            background: @blue;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            transition: opacity 0.4s, transform 0.4s;
+            border-bottom: 4px solid @gold;
+            border-top: 4px solid @gold;
+            @media screen and (min-width: @mobileBreak) {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            .summary-title {
+                margin: 0;
+            }
+        }
+        &:hover {
+            .summary-content {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            .summary-thumbnail-container {
+                img {
+                    filter: grayscale(0);
+                }
+            }
+        }
+    }
+}

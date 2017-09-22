@@ -1,0 +1,155 @@
+/***** HOMEPAGE *****/
+
+.landing {
+    /* Services */
+    section[data-collection-id="59b9b66b914e6b4a558284c9"] {
+        .Index-page-content {
+            max-width: 100%;
+            padding-left: 0;
+            padding-right: 0;
+            padding-bottom: @servicesPaddingBottom;
+            padding-top: @servicesPaddingTop;
+        }
+        .sqs-block-code {
+            width: 100% !important;
+            padding-bottom: 0 !important;
+        }
+        .collection-list {
+            .collection-item {
+                height: 200px;
+                @media screen and (min-width: @mobileBreak) {
+                    opacity:0;
+                    transform: translateY(130px);
+                }
+                transition:opacity 1s ease,
+                transform 1s ease;
+                &.fade-in-up {
+                    opacity: 1;
+                    transform: translateY(0px);
+                }
+                &:hover {
+                    opacity: 0.75;
+                }
+                &:nth-child(odd) {
+                    background: @blue;
+                }
+                &:nth-child(even) {
+                    background: @gold;
+                }
+                @media screen and (max-width:1024px) {
+                    width: 100% !important;
+                }
+                position:relative;
+                .media-wrapper {
+                    img {
+                        display: none;
+                        width: 100%;
+                    }
+                }
+                .meta-content {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    .title {
+                        text-align: center;
+                        color: white;
+                        min-width: 200px;
+                        font-size: 1.5em;
+                        line-height: 1.3em;
+                    }
+                }
+            }
+        }
+    }
+    /* Representations */
+    section[data-collection-id="59bc21aae9bfdf13c2e7fe39"] {
+        .Index-page-content {
+            .sqs-block-code {
+                width: 100% !important;
+                padding: 0;
+            }
+        }
+        .collection-list {
+            .collection-item {
+                opacity: 0;
+                transition: opacity 1s 0.2s, transform 1s 0.2s;
+                transform: translateY(100px);
+                margin-bottom: 1em;
+                @media screen and (max-width: 1024px) {
+                    width:100%;
+                    &[data-scrollmap-is-visible="true"] {
+                        .meta-content {
+                            opacity: 1 !important;
+                        }
+                        .title {
+                            opacity: 0;
+                        }
+                        .media-wrapper {
+                            img {
+                                opacity: 0.2 !important;
+                            }
+                        }
+                    }
+                }
+                &:hover {
+                    .meta-content {
+                        transition: opacity 1.2s 0.4s !important;
+                        opacity: 1 !important;
+                    }
+                    .title {
+                        opacity: 0;
+                    }
+                    .media-wrapper {
+                        img {
+                            opacity: 0.2 !important;
+                        }
+                    }
+                }
+                &.fade-in-up {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+                .inner-content {
+                    &:not(.has-link) {
+                        pointer-events: none;
+                    }
+                    .media-wrapper {
+                        background: rgba(10, 10, 10, 1);
+                        display: flex;
+                        img {
+                            transition: opacity 0.6s;
+                            opacity: 0.5;
+                            object-fit: cover;
+                            height: 400px;
+                            width: 100%;
+                        }
+                    }
+                    .title {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        color: @gold;
+                        font-size: 1.5em;
+                        transition: opacity 0.6s;
+                        transform: translate(-50%, -50%);
+                        text-align: center;
+                    }
+                    .meta-content {
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        padding: 1em;
+                        display: flex;
+                        align-items: center;
+                        position: absolute;
+                        opacity: 0;
+                        transition: opacity 0.6s;
+                        color: @gold;
+                    }
+                }
+            }
+        }
+    }
+}

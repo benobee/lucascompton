@@ -1,0 +1,76 @@
+/* PROFESSIONALS LIST & INDIVIDUAL PAGES */
+
+
+/*main*/
+
+.professionals {
+    .professionals-list;
+}
+
+
+/*individual*/
+
+.individual-professionals {
+    .sqs-block-summary-v2[data-block-json*="55d3bafee4b05b3ce741cfeb"] {
+        .summary-item {
+            @height: 28vw;
+            @min-height: 200px;
+            @max-height: 450px;
+            @margin: 1.4vw;
+            height: @height;
+            max-height: @max-height;
+            @media screen and (max-width: @mobileBreak) {
+                min-height:@min-height;
+            }
+            background:@blue;
+            box-shadow:calc(@margin - 0.25vw) calc(@margin - 0.25vw) 0 @gold;
+            display:flex;
+            flex-direction:row;
+            .summary-thumbnail-outer-container {
+                width: 25% !important;
+                height: @height;
+                min-height: @min-height;
+                max-height: @max-height;
+                .summary-thumbnail-container {
+                    height: 100% !important;
+                    min-height: @min-height;
+
+                    padding: @margin;
+                    .summary-thumbnail.img-wrapper {
+                        height: 100% !important;
+                        display: flex;
+                        width: 30vw;
+                        @media screen and (min-width: @mobileBreak) {
+                            max-width:400px;
+                        }
+                        @media screen and (max-width:@mobileBreak) {
+                            width: 34vw;
+                        }
+                        img {
+                            position: relative !important;
+                            object-fit: cover;
+                        }
+                    }
+                }
+            }
+            .summary-content {
+                width: 75% !important;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: @height;
+                min-height: @min-height;
+                max-height: @max-height;
+                .summary-title {
+                    color: white;
+                    font-size: 3.5vw;
+                }
+            }
+        }
+    }
+    .sqs-block.gallery-block.sqs-block-gallery[data-block-json*="55d3bafee4b05b3ce741cfeb"] {
+        img {
+            filter: grayscale(1);
+        }
+    }
+}
